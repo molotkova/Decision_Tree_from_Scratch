@@ -1,0 +1,6 @@
+type: edu
+files:
+- name: split_user.py
+  visible: true
+- name: tests.py
+  visible: false

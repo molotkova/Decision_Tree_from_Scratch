@@ -1,0 +1,8 @@
+type: hyperskill
+title: Decision Tree from Scratch
+language: English
+summary: In this project, we will take a closer look at decision tree predicting algorithm
+  and write it from scratch using just Python, NumPy and Pandas.
+programming_language: Python
+content:
+- Decision Tree from Scratch

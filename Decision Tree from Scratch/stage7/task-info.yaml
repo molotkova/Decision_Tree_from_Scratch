@@ -1,6 +1,6 @@
 type: edu
 files:
-- name: tests.py
-  visible: false
 - name: split_num.py
   visible: true
+- name: tests.py
+  visible: false

@@ -60,8 +60,8 @@ class DecisionTree:
         return min_gini, split_feature, split_val, left, right
 
     def _split(self, node, data, res):
-        gini, feature, val, left, right = self._split_fun(data, res)
         same = True
+        gini = self._gini_impurity(res)
         for col in data.columns:
             if len(np.unique(data[col])) != 1:
                 same = False
@@ -70,6 +70,7 @@ class DecisionTree:
             index = np.argmax(np.unique(res, return_counts=True)[1])
             node.set_term(np.unique(res)[index])
         else:
+            w_gini, feature, val, left, right = self._split_fun(data, res)
             node.set_split(feature, val)
             node.left = Node()
             left_data = data.iloc[left, :].copy()
@@ -111,6 +112,3 @@ tree.fit(features_train_stage6, target_train_stage6)
 y_pred = tree.predict(features_test_stage6)
 tn, fp, fn, tp = confusion_matrix(target_test_stage6, y_pred, normalize='true').ravel()
 print(round(tp, 3), round(tn, 3))
-
-# correct output
-# print("0.583 0.903")

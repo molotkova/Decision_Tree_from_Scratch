@@ -64,7 +64,7 @@ class DecisionTree:
         return min_gini, split_feature, split_val, left, right
 
     def _split_with_num(self, node, data, res):
-        gini, feature, val, left, right = self._split_fun_with_num(data, res)
+        gini = self._gini_impurity(res)
         same = True
         for col in data.columns:
             if (len(np.unique(data[col])) != 1):
@@ -74,6 +74,7 @@ class DecisionTree:
             index = np.argmax(np.unique(res, return_counts=True)[1])
             node.set_term(np.unique(res)[index])
         else:
+            w_gini, feature, val, left, right = self._split_fun_with_num(data, res)
             node.set_split(feature, val)
             print(f"Made split: {feature} is {val}") # commented because of the 5th stage
             node.left = Node()

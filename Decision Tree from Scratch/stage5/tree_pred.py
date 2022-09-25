@@ -37,7 +37,7 @@ class DecisionTree:
         size = sum(len(part) for part in parts)
         for part in parts:
             res += self._gini_impurity(part) * len(part) / size
-        return res
+        return round(res, 5)
 
     def _split_fun(self, data, res):
         features = data.columns

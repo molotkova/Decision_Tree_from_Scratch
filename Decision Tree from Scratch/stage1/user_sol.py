@@ -11,7 +11,7 @@ def w_gini_impurity(parts):
     size = sum(len(part) for part in parts)
     for part in parts:
         res += gini_impurity(part) * len(part) / size
-    return res
+    return round(res, 5)
 
 
 node_inp = input().split()

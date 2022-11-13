@@ -25,7 +25,7 @@ class RecSplitTest(StageTest):
             raise WrongAnswer("Wrong second log message. Correct message template: 'Made split: Sex is 1'."
                               "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
         if res[2] != ANSWER[2]:
-            raise WrongAnswer("Wrong second log message. Correct message template: 'Made split: Sex is 1'."
+            raise WrongAnswer("Wrong third log message. Correct message template: 'Made split: Sex is 1'."
                               "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
         return CheckResult.correct()
 
